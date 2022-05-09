@@ -2,8 +2,7 @@ require("@nomiclabs/hardhat-waffle");
 require("dotenv").config({ path: __dirname + "/./../../.env" });
 
 const ROPSTEN_PRIVATE_KEY =
-  process.env.ROPSTEN_PRIVATE_KEY ||
-  "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
+  "c73ff505d1698373cc8aa62764a5dbc9ac213330e62113466ed3223fdca62c0c";
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -27,14 +26,20 @@ module.exports = {
     emerald_local: {
       url: "http://localhost:8545",
       accounts: [`${ROPSTEN_PRIVATE_KEY}`],
+      gas: 2000000000000000,
+      gasPrice: 2000000000000000,
     },
     emerald_testnet: {
       url: "https://testnet.emerald.oasis.dev",
       accounts: [`${ROPSTEN_PRIVATE_KEY}`],
+      gasPrice: 2000000000000000,
+      gas: 2000000000000000,
     },
     emerald_mainnet: {
       url: "https://emerald.oasis.dev",
       accounts: [`${ROPSTEN_PRIVATE_KEY}`],
+      gasPrice: 2000000000000000,
+      gas: 2000000000000000,
     },
   },
 };

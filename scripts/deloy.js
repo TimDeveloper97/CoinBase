@@ -11,10 +11,12 @@ async function main() {
   console.log("Deploying contracts with the account:", owner.address);
   console.log("Account balance:", (await owner.getBalance()).toString());
 
-  let usdc = await hre.ethers.getContractFactory("TokenUSDC");
-  usdc = await usdc.deploy();
+  const Usdc = await hre.ethers.getContractFactory("Usdc", owner);
 
-  console.log("TokenUSDC is deployed to address: ", usdc.address);
+  const usdc = await Usdc.deploy();
+  await usdc.deployed();
+
+  console.log("Usdc is deployed to address: ", usdc.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
