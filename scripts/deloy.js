@@ -8,15 +8,44 @@ const hre = require("hardhat");
 async function main() {
   const [owner] = await hre.ethers.getSigners();
 
-  console.log("Deploying contracts with the account:", owner.address);
-  console.log("Account balance:", (await owner.getBalance()).toString());
+  console.log("owner address:>> ", owner.address);
+  console.log("owner balance:>> ", (await owner.getBalance()).toString());
 
-  const Usdc = await hre.ethers.getContractFactory("Usdc", owner);
+  //#region Usdc
+  // const Usdc = await hre.ethers.getContractFactory("Usdc", owner);
 
-  const usdc = await Usdc.deploy();
-  await usdc.deployed();
+  // const usdc = await Usdc.deploy();
+  // await usdc.deployed();
 
-  console.log("Usdc is deployed to address: ", usdc.address);
+  // console.log("Usdc address:>> ", usdc.address);
+  //#endregion
+
+  //#region Btc
+  // const Btc = await hre.ethers.getContractFactory("Btc", owner);
+
+  // const btc = await Btc.deploy();
+  // await btc.deployed();
+
+  // console.log("Btc address:>> ", btc.address);
+  //#endregion
+
+  //#region Eth
+  // const Eth = await hre.ethers.getContractFactory("Eth", owner);
+
+  // const eth = await Eth.deploy();
+  // await eth.deployed();
+
+  // console.log("Eth address:>> ", eth.address);
+  //#endregion
+
+  //#region Upo
+  const Upo = await hre.ethers.getContractFactory("Upo", owner);
+
+  const upo = await Upo.deploy();
+  await upo.deployed();
+
+  console.log("Upo address:>> ", upo.address);
+  //#endregion
 }
 
 // We recommend this pattern to be able to use async/await everywhere

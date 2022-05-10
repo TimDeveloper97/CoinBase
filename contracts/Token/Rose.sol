@@ -3,14 +3,14 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "../constant.sol";
 
-contract Usdc is ERC20 {
+contract Rose is ERC20 {
     using SafeMath for uint256;
     address public minter;
 
-    constructor() ERC20("Usdc", "USDC") {
+    constructor() ERC20("Rose", "ROSE") {
         minter = msg.sender;
-        _mint(msg.sender, 10000 ether);
-        _mint(address(this), 10000 ether);
+        _mint(msg.sender, _totalSupply);
     }
 }

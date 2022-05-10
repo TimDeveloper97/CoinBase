@@ -25,21 +25,20 @@ module.exports = {
   networks: {
     emerald_local: {
       url: "http://localhost:8545",
-      accounts: [`${ROPSTEN_PRIVATE_KEY}`],
-      gas: 2000000000000000,
-      gasPrice: 2000000000000000,
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     emerald_testnet: {
+      chainId: 42261,
       url: "https://testnet.emerald.oasis.dev",
-      accounts: [`${ROPSTEN_PRIVATE_KEY}`],
-      gasPrice: 2000000000000000,
-      gas: 2000000000000000,
+      gas: 1000000,
+      gasPrice: 100000000000,
+      accounts: { mnemonic: 'wrist deer lumber program crop sugar section jaguar lab repair mutual demise dutch cradle brand margin minor happy cinnamon cube wish edit monitor amazing' }
     },
     emerald_mainnet: {
       url: "https://emerald.oasis.dev",
-      accounts: [`${ROPSTEN_PRIVATE_KEY}`],
-      gasPrice: 2000000000000000,
-      gas: 2000000000000000,
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
   },
 };
