@@ -10,7 +10,6 @@ import "../constant.sol";
 
 contract TBase is ERC20Burnable, Ownable, Initializable {
     using SafeMath for uint256;
-    address payable owner;
     mapping(address => uint256) internal minters;
     uint256 public MAX_TOTAL_SUPPLY = _totalSupply;
 
@@ -27,7 +26,6 @@ contract TBase is ERC20Burnable, Ownable, Initializable {
     constructor(string memory _name, string memory _symbol)
         ERC20(_name, _symbol)
     {
-        owner = payable(msg.sender);
         minters[msg.sender] = MAX_TOTAL_SUPPLY;
         _mint(msg.sender, MAX_TOTAL_SUPPLY);
     }
