@@ -1,11 +1,11 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Mint", function () {
+describe("Mint", async function () {
   it("USDC + Token(Upo, Btc, Eth, Rose) => Upfi (success)", async function () {
 
     //#region Deploy Upfi
-    const Upfi = await hre.ethers.getContractFactory("Upfi", owner);
+    const Upfi = await ethers.getContractFactory("Upfi");
 
     const upfi = await Upfi.deploy();
     await upfi.deployed();
@@ -14,7 +14,7 @@ describe("Mint", function () {
     //#endregion
 
     //#region Deploy Usdc
-    const Usdc = await hre.ethers.getContractFactory("Usdc", owner);
+    const Usdc = await ethers.getContractFactory("Usdc");
 
     const usdc = await Usdc.deploy();
     await usdc.deployed();
@@ -23,7 +23,7 @@ describe("Mint", function () {
     //#endregion
 
     //#region Deploy Upo
-    const Upo = await hre.ethers.getContractFactory("Upo", owner);
+    const Upo = await ethers.getContractFactory("Upo");
 
     const upo = await Upo.deploy();
     await upo.deployed();
@@ -32,7 +32,7 @@ describe("Mint", function () {
     //#endregion
 
     //#region Deploy Migrations
-    const Migrations = await hre.ethers.getContractFactory("Migrations", owner);
+    const Migrations = await ethers.getContractFactory("Migrations");
 
     const migrations = await Migrations.deploy();
     await migrations.deployed();

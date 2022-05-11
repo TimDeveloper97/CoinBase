@@ -1,5 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
-require("dotenv").config({ path: __dirname + "/./../../.env" });
+// require("dotenv").config({ path: __dirname + "/./../../.env" });
 
 const mnemonic =
   'wrist deer lumber program crop sugar section jaguar lab repair mutual demise dutch cradle brand margin minor happy cinnamon cube wish edit monitor amazing';
@@ -41,12 +41,12 @@ module.exports = {
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
   },
-  paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./cache",
-    artifacts: "./artifacts"
-  },
+  // paths: {
+  //   sources: "./contracts",
+  //   tests: "./test",
+  //   cache: "./cache",
+  //   artifacts: "./artifacts"
+  // },
   mocha: {
     timeout: 60000
   }
