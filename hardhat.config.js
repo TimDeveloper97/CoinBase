@@ -1,8 +1,8 @@
 require("@nomiclabs/hardhat-waffle");
 require("dotenv").config({ path: __dirname + "/./../../.env" });
 
-const ROPSTEN_PRIVATE_KEY =
-  "c73ff505d1698373cc8aa62764a5dbc9ac213330e62113466ed3223fdca62c0c";
+const mnemonic =
+  'wrist deer lumber program crop sugar section jaguar lab repair mutual demise dutch cradle brand margin minor happy cinnamon cube wish edit monitor amazing';
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -33,7 +33,7 @@ module.exports = {
       url: "https://testnet.emerald.oasis.dev",
       gas: 1000000,
       gasPrice: 100000000000,
-      accounts: { mnemonic: 'wrist deer lumber program crop sugar section jaguar lab repair mutual demise dutch cradle brand margin minor happy cinnamon cube wish edit monitor amazing' }
+      accounts: { mnemonic: mnemonic }
     },
     emerald_mainnet: {
       url: "https://emerald.oasis.dev",
