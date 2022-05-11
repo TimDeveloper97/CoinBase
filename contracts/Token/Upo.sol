@@ -7,5 +7,4 @@ import "../Token/BaseToken.sol";
 
 contract Upo is TBase {
     constructor() TBase("Upo", "UPO") {}
-
 }

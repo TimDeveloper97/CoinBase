@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-import "../constant.sol";
+import "../Constant.sol";
 
 contract TBase is ERC20Burnable, Ownable, Initializable {
     using SafeMath for uint256;
@@ -31,7 +31,7 @@ contract TBase is ERC20Burnable, Ownable, Initializable {
     }
 
     function initialize(uint256 _initial) public initializer {
-        super._mint(_msgSender(), _initial); // mint initial supply to add liquidity
+        super._mint(_msgSender(), _initial);
     }
 
     /* ========== MUTATIVE FUNCTIONS ========== */

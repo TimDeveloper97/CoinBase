@@ -5,6 +5,10 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "../Token/BaseToken.sol";
 
+contract Btc is TBase {
+    constructor() TBase("Btc", "BTC") {}
+}
+
 // contract Btc is ERC20 {
 //     using SafeMath for uint256;
 //     address public minter;
@@ -15,7 +19,3 @@ import "../Token/BaseToken.sol";
 //         _mint(address(this), _totalSupply);
 //     }
 // }
-
-contract Btc is TBase {
-    constructor() TBase("Btc", "BTC") {}
-}
